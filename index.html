@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FlexFit — workouts that adapt to your week</title>
+<meta name="description" content="FlexFit is a fictional adaptive workout app concept. Build a sample week of training in seconds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top">Flex<span>Fit</span></a>
+    <nav aria-label="Main">
+      <a href="#builder">Build a week</a><a href="#how">How it works</a><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn sm" href="#builder">Try the builder</a>
+  </div>
+</header>
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap hero-in">
+    <div>
+      <p class="pill">Demo concept · adaptive training</p>
+      <h1>Your week, <em>flexed</em> to fit.</h1>
+      <p class="lead">Tell FlexFit your goal, your days and your gear. Get a plan that bends around real life, with clear sets and reps for every session.</p>
+      <div class="cta"><a class="btn" href="#builder">Build my week</a><a class="btn ghost" href="#how">See how it works</a></div>
+      <dl class="stats">
+        <div><dt>Sample exercises</dt><dd><span data-count="48">0</span>+</dd></div>
+        <div><dt>Plan combos</dt><dd><span data-count="135">0</span></dd></div>
+        <div><dt>Seconds to a plan</dt><dd><span data-count="10">0</span></dd></div>
+      </dl>
+    </div>
+    <div class="phone" aria-label="Animated mockup of a workout screen">
+      <div class="screen">
+        <div class="notch"></div>
+        <p class="s-top">Today · Push day</p>
+        <div class="ring"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="bg"/><circle cx="60" cy="60" r="52" class="fg"/></svg>
+          <div class="ring-t"><b id="reps">0</b><small>of 12 reps</small></div></div>
+        <p class="s-ex">Dumbbell Bench Press</p>
+        <p class="s-set">Set 3 of 4</p>
+        <div class="bars"><i></i><i></i><i></i><i></i></div>
+        <div class="s-btn">Rest 45s</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="builder">
+  <div class="wrap">
+    <h2>Build your week</h2>
+    <p class="sub">Pick four things. The plan updates instantly, no sign-up and no server.</p>
+    <form class="builder" id="bform" onsubmit="return false">
+      <fieldset><legend>Goal</legend><div class="chips" data-name="goal">
+        <label><input type="radio" name="goal" value="strength" checked><span>Build strength</span></label>
+        <label><input type="radio" name="goal" value="lean"><span>Get lean</span></label>
+        <label><input type="radio" name="goal" value="stamina"><span>Boost stamina</span></label></div></fieldset>
+      <fieldset><legend>Experience</legend><div class="chips">
+        <label><input type="radio" name="exp" value="0" checked><span>Beginner</span></label>
+        <label><input type="radio" name="exp" value="1"><span>Intermediate</span></label>
+        <label><input type="radio" name="exp" value="2"><span>Advanced</span></label></div></fieldset>
+      <fieldset><legend>Equipment</legend><div class="chips">
+        <label><input type="radio" name="eq" value="body" checked><span>Bodyweight</span></label>
+        <label><input type="radio" name="eq" value="db"><span>Dumbbells</span></label>
+        <label><input type="radio" name="eq" value="gym"><span>Full gym</span></label></div></fieldset>
+      <div class="days"><label for="days">Days per week: <output id="dout">4</output></label>
+        <input type="range" id="days" min="2" max="6" value="4"></div>
+    </form>
+    <p class="summary" id="summary" aria-live="polite"></p>
+    <div class="grid" id="plan" role="list"></div>
+    <p class="note">Sample plan for demo purposes only. Not personalised advice. Check with a professional if unsure about exercise.</p>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><b>1</b><h3>Tell us your setup</h3><p>Goal, level, days, equipment. Four taps.</p></li>
+      <li><b>2</b><h3>Get your week</h3><p>Sessions are balanced across push, pull, legs and core.</p></li>
+      <li><b>3</b><h3>Train, then adapt</h3><p>Miss a day? The plan shifts so the week still adds up.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="light" id="features">
+  <div class="wrap">
+    <h2>Built to be used</h2>
+    <div class="cards">
+      <article><h3>Adaptive weeks</h3><p>Move a session and the rest rebalance around it.</p></article>
+      <article><h3>Clear sets and reps</h3><p>No guesswork. Every exercise shows what to do.</p></article>
+      <article><h3>Any equipment</h3><p>Living room, hotel room or full gym.</p></article>
+      <article><h3>Streaks that feel good</h3><p>Rest days count. Consistency beats perfection.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="streak" id="streak">
+  <div class="wrap">
+    <h2>Keep the streak alive</h2>
+    <p class="sub">Illustrative preview of the streak view.</p>
+    <div class="days-row" id="sdays"></div>
+    <div class="big"><span data-count="21">0</span><small>day streak (example)</small></div>
+    <div class="meter" role="img" aria-label="Weekly goal progress example, 80 percent"><i data-w="80"></i></div>
+    <p class="mini">Weekly goal: <span data-count="4">0</span> of 5 sessions</p>
+  </div>
+</section>
+
+<section class="light" id="pricing">
+  <div class="wrap">
+    <h2>Simple pricing</h2>
+    <p class="sub">Fictional prices for the demo.</p>
+    <div class="toggle" role="group" aria-label="Billing period">
+      <button type="button" aria-pressed="true" data-p="m">Monthly</button>
+      <button type="button" aria-pressed="false" data-p="y">Yearly <small>save 30%</small></button>
+    </div>
+    <div class="cards three">
+      <article><h3>Starter</h3><p class="price">$<span data-m="0" data-y="0">0</span><small>/mo</small></p><ul><li>3 plan builds a week</li><li>Bodyweight library</li></ul><a class="btn ghost dark" href="#builder">Start free</a></article>
+      <article class="hot"><h3>Plus</h3><p class="price">$<span data-m="10" data-y="7">10</span><small>/mo</small></p><ul><li>Unlimited plans</li><li>Adaptive rescheduling</li><li>All equipment</li></ul><a class="btn" href="#builder">Choose Plus</a></article>
+      <article><h3>Team</h3><p class="price">$<span data-m="24" data-y="17">24</span><small>/mo</small></p><ul><li>Up to 5 people</li><li>Shared streaks</li></ul><a class="btn ghost dark" href="#builder">Choose Team</a></article>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap narrow">
+    <h2>Questions</h2>
+    <div class="faq">
+      <details><summary>Is this a real app?</summary><p>No. FlexFit is a fictional concept built as a design and front-end demo.</p></details>
+      <details><summary>Does the builder use AI?</summary><p>No. It is plain JavaScript rules, so the same inputs always give the same week.</p></details>
+      <details><summary>Is the plan medical advice?</summary><p>No. It is a generic sample. Listen to your body and talk to a professional if unsure.</p></details>
+      <details><summary>Can I train with no equipment?</summary><p>Yes. Choose Bodyweight and every session works at home.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap foot"><a class="logo" href="#top">Flex<span>Fit</span></a><p>Demo concept by NEIM. Fictional product.</p></div></footer>
+<script src="script.js"></script>
+</body>
+</html>
