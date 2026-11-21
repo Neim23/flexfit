@@ -27,12 +27,12 @@ function build(goal,exp,eq,n){
   });
   return out;
 }
-const LAB={strength:'strength',lean:'lean',stamina:'stamina'},EL=['beginner','intermediate','advanced'],EQ={body:'bodyweight',db:'dumbbells',gym:'full gym'};
+const REST={strength:'2 to 3 min',lean:'45 to 60 s',stamina:'30 to 45 s'};const LAB={strength:'strength',lean:'lean',stamina:'stamina'},EL=['beginner','intermediate','advanced'],EQ={body:'bodyweight',db:'dumbbells',gym:'full gym'};
 function render(){
   const f=new FormData($('#bform')),n=+$('#days').value;
   $('#dout').textContent=n;
   const goal=f.get('goal'),exp=+f.get('exp'),eq=f.get('eq'),plan=build(goal,exp,eq,n);
-  $('#summary').textContent=`${n} sessions · ${LAB[goal]} · ${EL[exp]} · ${EQ[eq]}`;
+  $('#summary').textContent=`${n} sessions · ${LAB[goal]} · ${EL[exp]} · ${EQ[eq]} · rest ${REST[goal]} between sets`;
   $('#plan').innerHTML=plan.map((p,i)=>p?`<div class="day on" role="listitem"><h4>${DAYS[i]}</h4><strong>${p.title}</strong><ul>${p.items.map(x=>`<li>${x[0]}<b>${x[1]}</b></li>`).join('')}</ul></div>`
     :`<div class="day rest" role="listitem"><h4>${DAYS[i]}</h4><strong>Rest</strong><p>Walk, stretch, recover.</p></div>`).join('');
 }

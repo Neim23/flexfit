@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FlexFit — workouts that adapt to your week</title>
-<meta name="description" content="FlexFit is a fictional adaptive workout app concept. Build a sample week of training in seconds.">
+<title>FlexFit - 7-day workout plan builder</title>
+<meta name="description" content="FlexFit is a fictional workout app concept. The working builder turns a goal, level, equipment and 2 to 6 training days into a 7-day plan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
@@ -25,14 +25,13 @@
 <section class="hero" id="top">
   <div class="wrap hero-in">
     <div>
-      <p class="pill">Demo concept · adaptive training</p>
-      <h1>Your week, <em>flexed</em> to fit.</h1>
-      <p class="lead">Tell FlexFit your goal, your days and your gear. Get a plan that bends around real life, with clear sets and reps for every session.</p>
+      <h1>A 7-day plan from <em>four choices</em>.</h1>
+      <p class="lead">Pick a goal, a level, your equipment and 2 to 6 training days. FlexFit lays out the week with exercises, sets, reps and rest times.</p>
       <div class="cta"><a class="btn" href="#builder">Build my week</a><a class="btn ghost" href="#how">See how it works</a></div>
       <dl class="stats">
-        <div><dt>Sample exercises</dt><dd><span data-count="48">0</span>+</dd></div>
-        <div><dt>Plan combos</dt><dd><span data-count="135">0</span></dd></div>
-        <div><dt>Seconds to a plan</dt><dd><span data-count="10">0</span></dd></div>
+        <div><dt>Exercises per equipment setup</dt><dd><span data-count="16">0</span></dd></div>
+        <div><dt>Possible plans</dt><dd><span data-count="135">0</span></dd></div>
+        <div><dt>Training-day options (2 to 6)</dt><dd><span data-count="5">0</span></dd></div>
       </dl>
     </div>
     <div class="phone" aria-label="Animated mockup of a workout screen">
@@ -53,7 +52,7 @@
 <section class="light" id="builder">
   <div class="wrap">
     <h2>Build your week</h2>
-    <p class="sub">Pick four things. The plan updates instantly, no sign-up and no server.</p>
+    <p class="sub">Four inputs. The plan rebuilds on every change and nothing leaves your browser.</p>
     <form class="builder" id="bform" onsubmit="return false">
       <fieldset><legend>Goal</legend><div class="chips" data-name="goal">
         <label><input type="radio" name="goal" value="strength" checked><span>Build strength</span></label>
@@ -72,7 +71,7 @@
     </form>
     <p class="summary" id="summary" aria-live="polite"></p>
     <div class="grid" id="plan" role="list"></div>
-    <p class="note">Sample plan for demo purposes only. Not personalised advice. Check with a professional if unsure about exercise.</p>
+    <p class="note">Sample plan only. If you have an injury or health condition, ask a professional before training.</p>
   </div>
 </section>
 
@@ -80,29 +79,29 @@
   <div class="wrap">
     <h2>How it works</h2>
     <ol class="steps">
-      <li><b>1</b><h3>Tell us your setup</h3><p>Goal, level, days, equipment. Four taps.</p></li>
-      <li><b>2</b><h3>Get your week</h3><p>Sessions are balanced across push, pull, legs and core.</p></li>
-      <li><b>3</b><h3>Train, then adapt</h3><p>Miss a day? The plan shifts so the week still adds up.</p></li>
+      <li><b>1</b><h3>Pick your setup</h3><p>Goal, level, equipment, and 2 to 6 training days.</p></li>
+      <li><b>2</b><h3>Read the week</h3><p>Training days get 3 or 4 exercises, the rest are rest days.</p></li>
+      <li><b>3</b><h3>Follow the sets</h3><p>Every exercise shows sets and reps. Rest time is listed above the grid.</p></li>
     </ol>
   </div>
 </section>
 
 <section class="light" id="features">
   <div class="wrap">
-    <h2>Built to be used</h2>
-    <div class="cards">
-      <article><h3>Adaptive weeks</h3><p>Move a session and the rest rebalance around it.</p></article>
-      <article><h3>Clear sets and reps</h3><p>No guesswork. Every exercise shows what to do.</p></article>
-      <article><h3>Any equipment</h3><p>Living room, hotel room or full gym.</p></article>
-      <article><h3>Streaks that feel good</h3><p>Rest days count. Consistency beats perfection.</p></article>
-    </div>
+    <h2>What the builder does</h2>
+    <dl class="facts">
+      <div><dt>Three equipment setups</dt><dd>Bodyweight, dumbbells or full gym, 16 exercises each.</dd></div>
+      <div><dt>Fixed set and rep ranges</dt><dd>Strength 4-5 sets of 3-6. Lean 3-4 sets of 10-15. Stamina 3-4 sets of 15-25.</dd></div>
+      <div><dt>Rest days included</dt><dd>2 to 6 sessions a week. Every other day is a rest day.</dd></div>
+      <div><dt>Streak view (concept)</dt><dd>Rest days keep a streak going. The section below is example data.</dd></div>
+    </dl>
   </div>
 </section>
 
 <section class="streak" id="streak">
   <div class="wrap">
     <h2>Keep the streak alive</h2>
-    <p class="sub">Illustrative preview of the streak view.</p>
+    <p class="sub">Example data for the concept.</p>
     <div class="days-row" id="sdays"></div>
     <div class="big"><span data-count="21">0</span><small>day streak (example)</small></div>
     <div class="meter" role="img" aria-label="Weekly goal progress example, 80 percent"><i data-w="80"></i></div>
@@ -116,12 +115,12 @@
     <p class="sub">Fictional prices for the demo.</p>
     <div class="toggle" role="group" aria-label="Billing period">
       <button type="button" aria-pressed="true" data-p="m">Monthly</button>
-      <button type="button" aria-pressed="false" data-p="y">Yearly <small>save 30%</small></button>
+      <button type="button" aria-pressed="false" data-p="y">Yearly <small>about 30% off</small></button>
     </div>
     <div class="cards three">
-      <article><h3>Starter</h3><p class="price">$<span data-m="0" data-y="0">0</span><small>/mo</small></p><ul><li>3 plan builds a week</li><li>Bodyweight library</li></ul><a class="btn ghost dark" href="#builder">Start free</a></article>
-      <article class="hot"><h3>Plus</h3><p class="price">$<span data-m="10" data-y="7">10</span><small>/mo</small></p><ul><li>Unlimited plans</li><li>Adaptive rescheduling</li><li>All equipment</li></ul><a class="btn" href="#builder">Choose Plus</a></article>
-      <article><h3>Team</h3><p class="price">$<span data-m="24" data-y="17">24</span><small>/mo</small></p><ul><li>Up to 5 people</li><li>Shared streaks</li></ul><a class="btn ghost dark" href="#builder">Choose Team</a></article>
+      <article><h3>Starter</h3><p class="price">$<span data-m="0" data-y="0">0</span><small>/mo</small></p><ul><li>3 plan builds a week</li><li>Bodyweight setup only</li></ul><a class="btn ghost dark" href="#builder">Start free</a></article>
+      <article class="hot"><h3>Plus</h3><p class="price">$<span data-m="10" data-y="7">10</span><small>/mo</small></p><ul><li>No limit on plan builds</li><li>All three equipment setups</li></ul><a class="btn" href="#builder">Choose Plus</a></article>
+      <article><h3>Team</h3><p class="price">$<span data-m="24" data-y="17">24</span><small>/mo</small></p><ul><li>Up to 5 people</li><li>Shared streak view</li></ul><a class="btn ghost dark" href="#builder">Choose Team</a></article>
     </div>
   </div>
 </section>
@@ -130,10 +129,10 @@
   <div class="wrap narrow">
     <h2>Questions</h2>
     <div class="faq">
-      <details><summary>Is this a real app?</summary><p>No. FlexFit is a fictional concept built as a design and front-end demo.</p></details>
-      <details><summary>Does the builder use AI?</summary><p>No. It is plain JavaScript rules, so the same inputs always give the same week.</p></details>
-      <details><summary>Is the plan medical advice?</summary><p>No. It is a generic sample. Listen to your body and talk to a professional if unsure.</p></details>
-      <details><summary>Can I train with no equipment?</summary><p>Yes. Choose Bodyweight and every session works at home.</p></details>
+      <details><summary>Is this a real app?</summary><p>No. FlexFit is a fictional concept. There is nothing to download or buy.</p></details>
+      <details><summary>Does the builder use AI?</summary><p>No. It is a fixed set of rules in script.js, so the same inputs always give the same plan.</p></details>
+      <details><summary>Is the plan medical advice?</summary><p>No. It is a generic sample. If you have an injury or health condition, ask a professional before training.</p></details>
+      <details><summary>Can I train with no equipment?</summary><p>Yes. The Bodyweight setup uses floor space, a doorframe and a towel.</p></details>
     </div>
   </div>
 </section>
